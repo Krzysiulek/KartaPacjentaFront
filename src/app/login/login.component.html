@@ -1,0 +1,24 @@
+<div class="w-50 m-auto">
+  <h2 class="text-center mt-5">Login</h2>
+  <form>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="name" [(ngModel)]="username" placeholder="Username" name="username" class="form-control" id="username">
+    </div>
+
+    <div class="form-group">
+      <label for="passw">Title:</label>
+      <input type="password" [(ngModel)]="password" placeholder="Password" name="password" class="form-control" id="passw">
+    </div>
+
+<!--    <button class="btn btn-success" (click)="checkLogin()">Log In</button>-->
+  </form>
+</div>
+
+<div *ngIf="true" class="alert alert-success w-50 mt-5 m-auto">
+  <strong>Login succeed!</strong>
+</div>
+
+<div *ngIf="true" class="alert alert-danger w-50 mt-5 m-auto">
+  <strong>Cannot login!</strong> Check your login and password and try again!
+</div>

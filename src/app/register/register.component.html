@@ -1,0 +1,39 @@
+<div class="w-50 m-auto">
+  <h2 class="text-center mt-5">Register</h2>
+  <form>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="username" [(ngModel)]="serviceUser.userName" placeholder="Username" name="username" class="form-control" id="username">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="username" [(ngModel)]="serviceUser.email" placeholder="Email" name="email" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input [(ngModel)]="serviceUser.password" type = "password" placeholder="Password" name="password" class="form-control" id="password">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Confirm password:</label>
+      <input [(ngModel)]="confirmPassword" type = "password" placeholder="Confirm password" name="confirmPassword" class="form-control" id="confirmPassword">
+    </div>
+
+    <button class="btn btn-success" (click)="createUser()">Register</button>
+  </form>
+</div>
+
+<div *ngIf="registrationSuccess" class="alert alert-success w-50 mt-5 m-auto">
+  <strong>Congrats!</strong> You are successfully registered. Now you can login.
+</div>
+
+<div *ngIf="passwordsAreNotEqual" class="alert alert-danger w-50 mt-5 m-auto">
+  <strong>Oops. Something went wrong!</strong> Confirm password and password are not equals!
+</div>
+
+<div *ngIf="registrationError" class="alert alert-danger w-50 mt-5 m-auto">
+  <strong>Error!</strong> Such user exists!
+</div>
+
