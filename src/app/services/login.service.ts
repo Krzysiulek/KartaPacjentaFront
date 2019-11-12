@@ -14,6 +14,11 @@ export class LoginService {
 
     return this.httpClient.post<MyServiceUser>(serviceUrl + '/register', user);
   }
+
+  public logOut() {
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('password');
+  }
 }
 
 export class MyServiceUser {
