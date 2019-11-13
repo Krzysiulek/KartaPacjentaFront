@@ -14,6 +14,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { PatientEditHeaderComponent } from './patient-edit-header/patient-edit-header.component';
 import { MedicalHistoryComponent } from './medical-history/medical-history.component';
 import { AddDiseaseComponent } from './add-disease/add-disease.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AllUsersComponent } from './all-users/all-users.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AddDiseaseComponent } from './add-disease/add-disease.component';
     LogoutComponent,
     PatientEditHeaderComponent,
     MedicalHistoryComponent,
-    AddDiseaseComponent
+    AddDiseaseComponent,
+    AdminHeaderComponent,
+    AllUsersComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
     <div><a href="" class="navbar-brand">KartaPacjenta</a></div>
 
     <ul class="navbar-nav">
-      <li><a *ngIf="loginService.isUserAdmin()" routerLink="/all-books" class="nav-link">Admin Site</a></li>
+      <li><a *ngIf="loginService.isUserAdmin()" routerLink="/all-users" class="nav-link">Admin Site</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/all-books" class="nav-link">Patients</a></li>
       <li><a  *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
       <li><a  *ngIf="!loginService.isUserLoggedIn()" routerLink="/register" class="nav-link">Register</a></li>

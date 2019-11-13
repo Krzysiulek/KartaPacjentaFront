@@ -1,1 +1,32 @@
-<p>add-disease works!</p>
+<app-patient-edit-header></app-patient-edit-header>
+
+<div class="w-50 m-auto">
+  <h2 class="text-center mt-5">Add Disease</h2>
+  <form>
+    <div class="form-group">
+      <label for="dis_name">Disease name:</label>
+      <input type="name" [(ngModel)]="username" placeholder="Disease" name="dis_name" class="form-control" id="dis_name">
+    </div>
+
+    <div>
+      <label for="dis_category">Disease category:</label>
+      <input type="name" [(ngModel)]="dis_category" placeholder="Category" name="dis_category" class="form-control" id="dis_category">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label for="dis_description">Disease description:</label>
+      <textarea class="bg-light form-control " rows="20" autosize [(ngModel)]='rapidPageValue'></textarea>
+    </div>
+
+    <button class="btn btn-success" (click)="checkLogin()">Add disease</button>
+  </form>
+</div>
+
+<div *ngIf="loginSuccess" class="alert alert-success w-50 mt-5 m-auto">
+  <strong>Disease added!</strong>
+</div>
+
+<div *ngIf="loginFailure" class="alert alert-danger w-50 mt-5 m-auto">
+  <strong>Disease not added!</strong> It may be server connection error. Try again or contact administrator!
+</div>
+
