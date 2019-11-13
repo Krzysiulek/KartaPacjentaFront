@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
+import { PatientEditHeaderComponent } from './patient-edit-header/patient-edit-header.component';
+import { MedicalHistoryComponent } from './medical-history/medical-history.component';
+import { AddDiseaseComponent } from './add-disease/add-disease.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { LogoutComponent } from './logout/logout.component';
     PatientsSiteComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    PatientEditHeaderComponent,
+    MedicalHistoryComponent,
+    AddDiseaseComponent
   ],
   imports: [
     BrowserModule,

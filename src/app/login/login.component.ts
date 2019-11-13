@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private loginService: AuthenticationService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   checkLogin() {
     (this.loginService.authenticate(this.username, this.password).subscribe(
@@ -28,10 +27,10 @@ export class LoginComponent implements OnInit {
 
           if (localStorage.getItem('multipleTimesLogin') == 'true')
           {
-            this.router.navigate(['documents']);
+            this.router.navigate(['patients']);
           }
           else {
-            this.router.navigate(['document-creator']);
+            this.router.navigate(['patients']);
           }
         },
         error => {

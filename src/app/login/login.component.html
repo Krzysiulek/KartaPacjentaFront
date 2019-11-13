@@ -11,14 +11,14 @@
       <input type="password" [(ngModel)]="password" placeholder="Password" name="password" class="form-control" id="passw">
     </div>
 
-<!--    <button class="btn btn-success" (click)="checkLogin()">Log In</button>-->
+    <button class="btn btn-success" (click)="checkLogin()">Log In</button>
   </form>
 </div>
 
-<div *ngIf="true" class="alert alert-success w-50 mt-5 m-auto">
+<div *ngIf="loginSuccess" class="alert alert-success w-50 mt-5 m-auto">
   <strong>Login succeed!</strong>
 </div>
 
-<div *ngIf="true" class="alert alert-danger w-50 mt-5 m-auto">
+<div *ngIf="loginFailure" class="alert alert-danger w-50 mt-5 m-auto">
   <strong>Cannot login!</strong> Check your login and password and try again!
 </div>

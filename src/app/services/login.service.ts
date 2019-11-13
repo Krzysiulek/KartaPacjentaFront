@@ -12,12 +12,11 @@ export class LoginService {
   public register(user) {
     console.log(JSON.stringify(user));
 
-    return this.httpClient.post<MyServiceUser>(serviceUrl + '/register', user);
+    return this.httpClient.post<MyServiceUser>(serviceUrl + '/api/users/register', user);
   }
 
   public logOut() {
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('password');
+    sessionStorage.clear();
   }
 }
 

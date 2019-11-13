@@ -17,7 +17,7 @@ export class AuthenticationService {
 
   authenticate(username: string, password: string) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get<Object>(serviceUrl + '/validate', {headers}).pipe(
+    return this.httpClient.get<Object>(serviceUrl + '/login', {headers}).pipe(
       map(
         userData => {
           sessionStorage.setItem('username', username);
@@ -39,14 +39,15 @@ export class AuthenticationService {
     const password = sessionStorage.getItem('password');
 
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get<User[]>(serviceUrl + '/api/readers/currentlyLogged', {headers});
+    return this.httpClient.get<User[]>(serviceUrl + '/api/users/currentlyLogged', {headers});
   }
 
   public isUserLoggedAsAdmin() {
     this.getCurrentlyLoggedUser().subscribe(data => {
+      console.log(data);
       sessionStorage.setItem('isadmin', this.contains(data['authorities'], 'authority', 'ROLE_ADMIN'));
-      sessionStorage.setItem('isuser', this.contains(data['authorities'], 'authority', 'ROLE_USER'));
-      sessionStorage.setItem('iseditor', this.contains(data['authorities'], 'authority', 'ROLE_WRITER'));
+      sessionStorage.setItem('isdoctor', this.contains(data['authorities'], 'authority', 'ROLE_DOCTOR'));
+      sessionStorage.setItem('ispatient', this.contains(data['authorities'], 'authority', 'ROLE_PATIENT'));
 
       return data['authorities'][0]['authority'] == "ROLE_ADMIN";
     }), error => {
@@ -58,20 +59,19 @@ export class AuthenticationService {
     return sessionStorage.getItem('isadmin') == 'true';
   }
 
-  public isUserEditor() {
-    return sessionStorage.getItem('iseditor') == 'true';
+  public isUserDoctor() {
+    return sessionStorage.getItem('isdoctor') == 'true';
   }
 
-  public isUserUser() {
-    return sessionStorage.getItem('isuser') == 'true';
+  public issUserPatient() {
+    return sessionStorage.getItem('ispatient') == 'true';
   }
 
   logOut() {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('password');
     sessionStorage.removeItem('isadmin');
-    sessionStorage.removeItem('isuser');
-    sessionStorage.removeItem('iseditor');
+
 
   }
 

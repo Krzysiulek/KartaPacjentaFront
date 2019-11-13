@@ -1,1 +1,28 @@
-<p>patients-site works!</p>
+<div class="form-group bg-danger w-25 ml-2 rounded-circle">
+  <input type="name" (keyup)="onChange($event)" [(ngModel)]="filterValue" placeholder="Search documents" name="title" class="form-control mt-3" id="title">
+</div>
+
+<table class="table table-striped w-100 m-auto text-center">
+  <thead>
+  <tr>
+    <th class="th-lg">Patient ID</th>
+    <th class="th-lg">First Name</th>
+    <th class="th-lg">Last Name</th>
+    <th class="th-lg">Address</th>
+    <th class="th-lg">Personal Identity Number</th>
+    <th class="th-lg">Edit</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let patient of filtredPatients">
+    <th scope="row">{{patient.patientId}}</th>
+    <th scope="row">{{patient.firstName}}</th>
+    <td>{{patient.lastName}}</td>
+    <td>{{patient.address}}</td>
+    <td>{{patient.personalIdentityNumber}}</td>
+    <td><button class="btn btn-info" (click)="openPatient(patient.patientId)">Edit</button></td>
+  </tr>
+  </tbody>
+
+</table>

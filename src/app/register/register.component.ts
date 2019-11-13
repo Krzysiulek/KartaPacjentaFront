@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService, MyServiceUser} from '../services/login.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   registrationError: boolean;
   registrationSuccess: boolean;
 
-  constructor(private httpService: LoginService) { }
+  constructor(private httpService: LoginService, private router: Router) { }
 
   ngOnInit() {
 
@@ -26,6 +27,8 @@ export class RegisterComponent implements OnInit {
         .subscribe( data => {
             this.registrationSuccess = true;
             setTimeout(() => this.registrationSuccess = false, 10000);
+            this.router.navigate(['login']);
+
           },
           error1 => {
             this.registrationError = true;
