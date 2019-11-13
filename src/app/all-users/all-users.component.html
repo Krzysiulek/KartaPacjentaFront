@@ -1,2 +1,35 @@
 <app-admin-header></app-admin-header>
-<p>all-users works!</p>
+
+<div class="form-group bg-danger w-25 ml-2 rounded-circle">
+  <input type="name" (keyup)="onChange($event)" [(ngModel)]="filterValue" placeholder="Search users" name="title" class="form-control mt-3" id="title">
+</div>
+
+<table class="table table-striped w-100 m-auto text-center">
+  <thead>
+  <tr>
+    <th class="th-lg">User ID</th>
+    <th class="th-lg">Username</th>
+    <th class="th-lg">Email</th>
+    <th class="th-lg">Roles</th>
+    <th class="th-lg">Grant Admin</th>
+    <th class="th-lg">Grant Doctor</th>
+    <th class="th-lg">Grant Patient</th>
+    <th class="th-lg">Delete</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let user of filtredUsers">
+    <th scope="row">{{user.userId}}</th>
+    <td scope="row">{{user.userName}}</td>
+    <td scope="row">{{user.email}}</td>
+    <td scope="row">{{user.roles}}</td>
+    <td><button class="btn btn-danger" (click)="grantAdminRole(user)">Grant Admin</button></td>
+    <td><button class="btn btn-warning" (click)="grantDoctorRole(user)">Grant Doctor</button></td>
+    <td><button class="btn btn-info" (click)="grantPatientRole(user)">Grant Patient</button></td>
+    <td><button class="btn btn-danger" (click)="delete(user)">Delete</button></td>
+  </tr>
+  </tbody>
+
+</table>
+

@@ -5,7 +5,7 @@
   <form>
     <div class="form-group">
       <label for="dis_name">Disease name:</label>
-      <input type="name" [(ngModel)]="username" placeholder="Disease" name="dis_name" class="form-control" id="dis_name">
+      <input type="name" [(ngModel)]="dis_name" placeholder="Disease" name="dis_name" class="form-control" id="dis_name">
     </div>
 
     <div>
@@ -14,19 +14,19 @@
     </div>
 
     <div class="mb-3 mt-3">
-      <label for="dis_description">Disease description:</label>
-      <textarea class="bg-light form-control " rows="20" autosize [(ngModel)]='rapidPageValue'></textarea>
+      <label>Disease description:</label>
+      <textarea class="bg-light form-control " rows="20" autosize [(ngModel)]='dis_description'></textarea>
     </div>
 
-    <button class="btn btn-success" (click)="checkLogin()">Add disease</button>
+    <button class="btn btn-success" (click)="addDisease()">Add disease</button>
   </form>
 </div>
 
-<div *ngIf="loginSuccess" class="alert alert-success w-50 mt-5 m-auto">
+<div *ngIf="add_dis_success" class="alert alert-success w-50 mt-5 m-auto">
   <strong>Disease added!</strong>
 </div>
 
-<div *ngIf="loginFailure" class="alert alert-danger w-50 mt-5 m-auto">
+<div *ngIf="add_dis_failure" class="alert alert-danger w-50 mt-5 m-auto">
   <strong>Disease not added!</strong> It may be server connection error. Try again or contact administrator!
 </div>
 
