@@ -5,11 +5,12 @@
     <ul class="navbar-nav">
       <li><a *ngIf="loginService.isUserAdmin()" routerLink="/all-users" class="nav-link">Admin Site</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/patients" class="nav-link">Patients</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/diseases" class="nav-link">Diseases</a></li>
       <li><a  *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
       <li><a  *ngIf="!loginService.isUserLoggedIn()" routerLink="/register" class="nav-link">Register</a></li>
-      <li><a  *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Log Out</a></li>
-      <li><a href="http://krisczarservice.herokuapp.com/swagger-ui.html#/" class="nav-link">Open API</a></li>
       <li><a href="https://trunk-kartapacjentaservice.herokuapp.com/api/users/test" class="nav-link">Click here to import some users</a></li>
+      <li><a href="http://krisczarservice.herokuapp.com/swagger-ui.html#/" class="nav-link">Open API</a></li>
+      <li><a  *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Log Out</a></li>
     </ul>
 
   </nav>

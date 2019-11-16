@@ -16,6 +16,10 @@ import { MedicalHistoryComponent } from './medical-history/medical-history.compo
 import { AddDiseaseComponent } from './add-disease/add-disease.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AllUsersComponent } from './all-users/all-users.component';
+import { PatientPersonalInfoComponent } from './patient-personal-info/patient-personal-info.component';
+import { DiseasesHeaderComponent } from './diseases-header/diseases-header.component';
+import { AllDiseasesComponent } from './all-diseases/all-diseases.component';
+import { CreateDiseaseComponent } from './create-disease/create-disease.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { AllUsersComponent } from './all-users/all-users.component';
     MedicalHistoryComponent,
     AddDiseaseComponent,
     AdminHeaderComponent,
-    AllUsersComponent
+    AllUsersComponent,
+    PatientPersonalInfoComponent,
+    DiseasesHeaderComponent,
+    AllDiseasesComponent,
+    CreateDiseaseComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,9 @@ import {LogoutComponent} from './logout/logout.component';
 import {MedicalHistoryComponent} from './medical-history/medical-history.component';
 import {AddDiseaseComponent} from './add-disease/add-disease.component';
 import {AllUsersComponent} from './all-users/all-users.component';
+import {PatientPersonalInfoComponent} from './patient-personal-info/patient-personal-info.component';
+import {AllDiseasesComponent} from './all-diseases/all-diseases.component';
+import {CreateDiseaseComponent} from './create-disease/create-disease.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -16,6 +19,9 @@ const routes: Routes = [
   { path: 'patients', component: PatientsSiteComponent },
   { path: 'medicalHistory', component: MedicalHistoryComponent },
   { path: 'addDisease', component: AddDiseaseComponent },
+  { path: 'patientInfo', component: PatientPersonalInfoComponent },
+  { path: 'diseases', component: AllDiseasesComponent },
+  { path: 'createDisease', component: CreateDiseaseComponent },
   { path: 'all-users', component: AllUsersComponent }
 
 ];
