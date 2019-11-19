@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient-personal-info.component.scss']
 })
 export class PatientPersonalInfoComponent implements OnInit {
+  firstName: string = "Krzysio";
 
   constructor() { }
 
