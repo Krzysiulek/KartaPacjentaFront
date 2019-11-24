@@ -1,2 +1,27 @@
 <app-diseases-header></app-diseases-header>
-<p>all-diseases works!</p>
+
+<div class="form-group bg-danger w-25 ml-2 rounded-circle">
+  <input type="name" (keyup)="onChange($event)" [(ngModel)]="filterValue" placeholder="Search diseases" name="title" class="form-control mt-3" id="title">
+</div>
+
+<table class="table table-striped w-100 m-auto text-center">
+  <thead>
+  <tr>
+    <th class="th-lg">Disease ID</th>
+    <th class="th-lg">Name</th>
+    <th class="th-lg">Category</th>
+    <th class="th-lg">More info</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let disease of filtredDiseases">
+    <th scope="row">{{disease.diseaseId}}</th>
+    <th scope="row">{{disease.name}}</th>
+    <td>{{disease.category}}</td>
+    <td><button class="btn btn-info" (click)="moreInfo(disease.diseaseId)">Info</button></td>
+  </tr>
+  </tbody>
+
+</table>
+
