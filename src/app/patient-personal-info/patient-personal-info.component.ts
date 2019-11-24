@@ -6,11 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient-personal-info.component.scss']
 })
 export class PatientPersonalInfoComponent implements OnInit {
-  firstName: string = "Krzysio";
+  patientId: number;
+  firstName: string;
+  lastName: string;
+  address: string;
+  personalIdentityNumber: number;
 
   constructor() { }
 
   ngOnInit() {
+  //  todo download all abouve values
+  }
+
+  genereateDocumentation() {
+    // todo generate documentation based on user history (rest endpoint)
   }
 
 }
