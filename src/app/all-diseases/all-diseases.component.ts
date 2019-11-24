@@ -40,4 +40,8 @@ export class AllDiseasesComponent implements OnInit {
         dis['category'].toString().toLowerCase().includes(this.filterValue.toLowerCase()));
     }
   }
+
+  goToMoreDiseaseInfo(disId) {
+    // todo: create disease info & route to this site
+  }
 }
