@@ -1,7 +1,7 @@
 <app-patient-edit-header></app-patient-edit-header>
 
 <div class="w-75 m-auto">
-  <h2 class="text-center mt-5">Patient Info</h2>
+  <h2 class="text-center mt-5 mb-5">Patient Info</h2>
   <form>
 
     <table class="table">
@@ -9,12 +9,36 @@
 
       <tr>
         <th>First Name</th>
-        <td>{{firstName}}</td>
+        <td>{{patient.firstName}}</td>
       </tr>
 
+      <tr>
+        <th>Last Name</th>
+        <td>{{patient.lastName}}</td>
+      </tr>
+
+      <tr>
+        <th>Address</th>
+        <td>{{patient.address}}</td>
+      </tr>
+
+      <tr>
+        <th>Phone</th>
+        <td>{{patient.phoneNumber}}</td>
+      </tr>
+
+      <tr>
+        <th>Personal Identity Number</th>
+        <td>{{patient.personalIdentityNumber}}</td>
+      </tr>
+
+      <tr>
+        <th>E-mail</th>
+        <td>{{patient.email}}</td>
+      </tr>
 
       </tbody>
     </table>
-    <button class="btn btn-success" (click)="genereateDocumentation()">Generate Patient Documentation</button>
+<!--    <button class="btn btn-success" (click)="genereateDocumentation()">Generate Patient Documentation</button>-->
   </form>
 </div>

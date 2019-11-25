@@ -20,6 +20,7 @@ export class PatientsSiteComponent implements OnInit {
   ngOnInit() {
     this.service.getAllPatients()
       .subscribe(response => {
+        console.log(response);
         this.patients = response;
         this.filtredPatients = this.patients;
       });

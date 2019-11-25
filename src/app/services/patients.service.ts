@@ -21,4 +21,9 @@ export class PatientsService {
     const headers = this.getHeader();
     return this.httpClient.get<Object[]>(serviceUrl + '/api/patients', {headers});
   }
+
+  public getPatient(patientId) {
+    const headers = this.getHeader();
+    return this.httpClient.get<Object[]>(serviceUrl + '/api/patients/' + patientId, {headers});
+  }
 }

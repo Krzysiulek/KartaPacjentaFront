@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PatientsService} from '../services/patients.service';
 
 @Component({
   selector: 'app-patient-personal-info',
@@ -6,16 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient-personal-info.component.scss']
 })
 export class PatientPersonalInfoComponent implements OnInit {
-  patientId: number;
-  firstName: string;
-  lastName: string;
-  address: string;
-  personalIdentityNumber: number;
+  patient: object;
+  patientId: string;
 
-  constructor() { }
+  constructor(public service: PatientsService) {
+    this.patientId = sessionStorage.getItem('patientId');
+  }
 
   ngOnInit() {
-  //  todo download all abouve values
+    this.service.getPatient(this.patientId)
+      .subscribe(response => {
+        console.log(response);
+        this.patient = response;
+      });
   }
 
   genereateDocumentation() {
