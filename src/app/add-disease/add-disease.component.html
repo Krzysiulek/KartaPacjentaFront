@@ -1,3 +1,43 @@
 <app-patient-edit-header></app-patient-edit-header>
-<p>Add disease works</p>
+
+<div class="form-group w-50 m-auto">
+  <h2 class="text-center mt-5 mb-5">Add New Patient Disease</h2>
+
+  <form [formGroup]="documentClassesChapterFormGroup">
+
+    <!--    select with diseases-->
+    <select formControlName="chapterClassesControl" [(ngModel)]="selectedDisease" name="selectedDisease"
+            class="form-control"
+            id="documentChapterClasses"
+            (change)="onChange($event)">
+      <option *ngFor="let disease of allDiseases" [selected]="true"
+              [value]="disease.name">
+        {{disease.name}}
+      </option>
+    </select>
+
+    <!--    patient description-->
+    <div class="mb-3 mt-3">
+      <label>Patient description:</label>
+      <textarea class="bg-light form-control " rows="10" autosize [(ngModel)]='pat_desc'></textarea>
+    </div>
+
+    <!--    doctor description-->
+    <div class="mb-3 mt-3">
+      <label>Doctor description:</label>
+      <textarea class="bg-light form-control " rows="10" autosize [(ngModel)]='doc_desc'></textarea>
+    </div>
+
+    <!--    doctor prescription-->
+    <div class="mb-3 mt-3">
+      <label>Doctor prescription:</label>
+      <textarea class="bg-light form-control " rows="10" autosize [(ngModel)]='doc_prescr'></textarea>
+    </div>
+
+    <!--    todo add media (like photos) -->
+
+  </form>
+</div>
+
+
 

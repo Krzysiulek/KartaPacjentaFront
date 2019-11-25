@@ -8,7 +8,7 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PatientsSiteComponent } from './patients-site/patients-site.component';
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PatientEditHeaderComponent } from './patient-edit-header/patient-edit-header.component';
@@ -44,7 +44,8 @@ import { CreateDiseaseComponent } from './create-disease/create-disease.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
