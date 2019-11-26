@@ -3,20 +3,30 @@
 <div class="form-group w-50 m-auto">
   <h2 class="text-center mt-5 mb-5">Add New Patient Disease</h2>
 
-  <form [formGroup]="documentClassesChapterFormGroup">
 
-    <!--    select with diseases-->
-    <select formControlName="chapterClassesControl" [(ngModel)]="selectedDisease" name="selectedDisease"
+    <!--    visit category-->
+    <div class="form-group">
+      <label for="vis_cat">Visit Category:</label>
+      <input type="username" [(ngModel)]="visit_category" placeholder="Visit category" name="vis_cat"
+             class="form-control" id="vis_cat">
+    </div>
+
+  <form [formGroup]="diseasesController">
+  <!--    select with diseases-->
+    <label>Please select patient disease:</label>
+    <select formControlName="diseasesController" [(ngModel)]="selectedDiseaseId" name="selectedDisease"
             class="form-control"
-            id="documentChapterClasses"
+            id="diseasesController"
             (change)="onChange($event)">
       <option *ngFor="let disease of allDiseases" [selected]="true"
-              [value]="disease.name">
+              [value]="disease.diseaseId">
         {{disease.name}}
       </option>
     </select>
+  </form>
 
-    <!--    patient description-->
+
+  <!--    patient description-->
     <div class="mb-3 mt-3">
       <label>Patient description:</label>
       <textarea class="bg-light form-control " rows="10" autosize [(ngModel)]='pat_desc'></textarea>
@@ -36,7 +46,7 @@
 
     <!--    todo add media (like photos) -->
 
-  </form>
+  <button class="btn btn-success" (click)="addDisease()">Save</button>
 </div>
 
 
