@@ -6,8 +6,7 @@
   <thead>
   <tr>
     <th class="th-lg">Patient ID</th>
-    <th class="th-lg">First Name</th>
-    <th class="th-lg">Last Name</th>
+    <th class="th-lg">Name</th>
     <th class="th-lg">Address</th>
     <th class="th-lg">Personal Identity Number</th>
     <th class="th-lg">Patient info</th>
@@ -17,8 +16,7 @@
   <tbody>
   <tr *ngFor="let patient of filtredPatients">
     <th scope="row">{{patient.patientId}}</th>
-    <th scope="row">{{patient.firstName}}</th>
-    <td>{{patient.lastName}}</td>
+    <th scope="row">{{patient.firstName + " " + patient.lastName}}</th>
     <td>{{patient.address}}</td>
     <td>{{patient.personalIdentityNumber}}</td>
     <td><button class="btn btn-info" (click)="openPatient(patient.patientId)">Info</button></td>

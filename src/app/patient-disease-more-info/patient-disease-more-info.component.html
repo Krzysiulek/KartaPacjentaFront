@@ -1,0 +1,95 @@
+<app-patient-edit-header></app-patient-edit-header>
+
+<div class="w-75 m-auto">
+  <h2 class="text-center mt-5 mb-5">Visit documentation</h2>
+  <form>
+
+    <table class="table">
+      <tbody>
+
+      <tr>
+        <th>Visit ID</th>
+        <td>{{history.courseOfIllnessId}}</td>
+      </tr>
+
+      <tr>
+        <th>Visit Category</th>
+        <td>{{history.visitCategory}}</td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+      </tr>
+
+<!--      disease Name-->
+      <tr>
+        <th>Disease Name</th>
+        <td>{{history.diseaseName}}</td>
+      </tr>
+
+<!--disease category-->
+      <tr>
+        <th>Disease Category</th>
+        <td>{{history.diseaseCategory}}</td>
+      </tr>
+<!--disease description-->
+      <tr>
+        <th>Disease Description</th>
+        <td>{{history.diseaseDescription}}</td>
+      </tr>
+
+
+      <tr>
+        <th></th>
+        <td></td>
+      </tr>
+
+<!--      doctor name-->
+      <tr>
+        <th>Doctor Name</th>
+        <td>{{history.doctorFirstName + " " + history.doctorLastName}}</td>
+      </tr>
+<!--doctor phone number-->
+      <tr>
+        <th>Doctor Phone Number</th>
+        <td>{{history.doctorPhoneNumber}}</td>
+      </tr>
+<!--      doctor email-->
+      <tr>
+        <th>Doctor Email</th>
+        <td>{{history.doctorEmail}}</td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+      </tr>
+
+<!--      visit time stamp-->
+      <tr>
+        <th>Visit Time</th>
+        <td>{{history.visitTimeStamp}}</td>
+      </tr>
+<!--patient desc-->
+      <tr>
+        <th>Patient Description</th>
+        <td>{{history.patientDescription}}</td>
+      </tr>
+<!--doctor desc-->
+      <tr>
+        <th>Doctor Description</th>
+        <td>{{history.doctorDescription}}</td>
+      </tr>
+<!--      doc prescr-->
+      <tr>
+        <th>Doctor Prescription</th>
+        <td>{{history.doctorPrescription}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+    <!--    <button class="btn btn-success" (click)="genereateDocumentation()">Generate Patient Documentation</button>-->
+  </form>
+</div>
+

@@ -43,6 +43,7 @@ export class AddDiseaseComponent implements OnInit {
       });
 
     let diseaseId = this.selectedDiseaseId;
+    console.log("dis id:" + diseaseId);
     let patientId = sessionStorage.getItem('patientId');
     let doctorId = this.currentlyLoggedInUser['doctorId'];
     let courseOfIllness = new CourseOfIllness(this.visit_category, Number(diseaseId), Number(patientId), Number(doctorId), this.pat_desc, this.doc_desc, this.doc_prescr);

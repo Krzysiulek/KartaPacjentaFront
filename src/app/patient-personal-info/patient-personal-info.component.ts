@@ -21,9 +21,4 @@ export class PatientPersonalInfoComponent implements OnInit {
         this.patient = response;
       });
   }
-
-  genereateDocumentation() {
-    // todo generate documentation based on user history (rest endpoint)
-  }
-
 }

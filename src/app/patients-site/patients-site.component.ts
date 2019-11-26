@@ -46,5 +46,4 @@ export class PatientsSiteComponent implements OnInit {
         patient['address'].toString().toLowerCase().includes(this.filterValue.toLowerCase()));
     }
   }
-
 }

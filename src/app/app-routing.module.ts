@@ -10,6 +10,7 @@ import {AllUsersComponent} from './all-users/all-users.component';
 import {PatientPersonalInfoComponent} from './patient-personal-info/patient-personal-info.component';
 import {AllDiseasesComponent} from './all-diseases/all-diseases.component';
 import {CreateDiseaseComponent} from './create-disease/create-disease.component';
+import {PatientDiseaseMoreInfoComponent} from './patient-disease-more-info/patient-disease-more-info.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'patientInfo', component: PatientPersonalInfoComponent },
   { path: 'diseases', component: AllDiseasesComponent },
   { path: 'createDisease', component: CreateDiseaseComponent },
+  { path: 'medicalHistoryMore', component: PatientDiseaseMoreInfoComponent },
   { path: 'all-users', component: AllUsersComponent }
 
 ];

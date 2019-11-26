@@ -1,2 +1,41 @@
 <app-patient-edit-header></app-patient-edit-header>
-<p>medical-history works!</p>
+
+<form class="form-inline">
+  <div class="form-group w-100 ml-2 mt-3 mb-3 mr-5">
+    <input type="name" (keyup)="onChange($event)" [(ngModel)]="filterValue" placeholder="Search in history" name="title"
+           class="form-control w-25" id="title">
+
+    <div class="btn btn-success ml-auto mr-3 bg-transparent btn-outline-danger">
+      <button class="btn btn-warning mr-1" (click)="generateDocumentation()">Generate Medical Documentation</button>
+      <button class="btn btn-success" (click)="generateDocumentation()">Generate Anonymize Medical Documentation</button>
+    </div>
+  </div>
+</form>
+
+<table class="table table-striped w-100 m-auto text-center">
+  <thead>
+  <tr>
+    <th class="th-lg">ID</th>
+    <th class="th-lg">Disease Name</th>
+    <th class="th-lg">Visit Category</th>
+    <th class="th-lg">Doctor Name</th>
+    <th class="th-lg">Timestamp</th>
+    <th class="th-lg">More info</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let history of filtredHistory">
+    <th scope="row">{{history.courseOfIllnessId}}</th>
+    <th scope="row">{{history.diseaseName}}</th>
+    <td>{{history.visitCategory}}</td>
+    <td>{{history.doctorFirstName + " " + history.doctorLastName}}</td>
+    <td>{{history.visitTimeStamp}}</td>
+    <td>
+      <button class="btn btn-info" (click)="moreInfo(history.patientId, history.courseOfIllnessId)">Info</button>
+    </td>
+  </tr>
+  </tbody>
+
+</table>
+
