@@ -21,6 +21,31 @@
       <input [(ngModel)]="confirmPassword" type = "password" placeholder="Confirm password" name="confirmPassword" class="form-control" id="confirmPassword">
     </div>
 
+    <div class="form-group">
+      <label for="f_name">First Name:</label>
+      <input type="username" [(ngModel)]="serviceUser.firstName" placeholder="First Name" name="f_name" class="form-control" id="f_name">
+    </div>
+
+    <div class="form-group">
+      <label for="l_name">Last Name:</label>
+      <input type="username" [(ngModel)]="serviceUser.lastName" placeholder="Last Name" name="l_name" class="form-control" id="l_name">
+    </div>
+
+    <div class="form-group">
+      <label for="addr">Address:</label>
+      <input type="username" [(ngModel)]="serviceUser.address" placeholder="Address" name="addr" class="form-control" id="addr">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="username" [(ngModel)]="serviceUser.phoneNumber" placeholder="Phone Number" name="phone" class="form-control" id="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="pesel">Personal Identity Number:</label>
+      <input type="username" [(ngModel)]="serviceUser.personalIdentityNumber" placeholder="Pesel" name="pesel" class="form-control" id="pesel">
+    </div>
+
     <!--    todo add other values: pesel itd-->
 
     <button class="btn btn-success" (click)="createUser()">Register</button>

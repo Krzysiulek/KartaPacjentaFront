@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  serviceUser: MyServiceUser = new MyServiceUser(null, '', '', '');
+  serviceUser: MyServiceUser = new MyServiceUser(null, '', '', '', '', '', '', null, null);
   confirmPassword: string;
   passwordsAreNotEqual: boolean;
   registrationError: boolean;

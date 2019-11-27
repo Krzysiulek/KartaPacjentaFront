@@ -24,6 +24,11 @@ export class MyServiceUser {
   constructor(public userId: number,
               public userName: string,
               public email: string,
-              public password: string) {
+              public password: string,
+              public firstName: string,
+              public lastName: string,
+              public address: string,
+              public phoneNumber: number,
+              public personalIdentityNumber: number) {
   }
 }
