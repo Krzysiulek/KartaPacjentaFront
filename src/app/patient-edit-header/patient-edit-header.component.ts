@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-patient-edit-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientEditHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: AuthenticationService) { }
 
   ngOnInit() {
   }

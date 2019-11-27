@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../authentication.service';
+import {PatientsService} from '../services/patients.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,9 @@ export class LoginComponent implements OnInit {
   loginSuccess: boolean;
   loginFailure: boolean;
 
-  constructor(private router: Router, private loginService: AuthenticationService) { }
+  constructor(private router: Router,
+              private loginService: AuthenticationService,
+              private patientsService: PatientsService) { }
 
   ngOnInit() {}
 
@@ -23,15 +26,7 @@ export class LoginComponent implements OnInit {
         data => {
           this.loginService.isUserLoggedAsAdmin();
           this.loginSuccess = true;
-          setTimeout(() => this.loginSuccess = false, 3000);
-
-          if (localStorage.getItem('multipleTimesLogin') == 'true')
-          {
-            this.router.navigate(['patients']);
-          }
-          else {
-            this.router.navigate(['patients']);
-          }
+          this.router.navigate(['patients']);
         },
         error => {
           this.loginFailure = true;

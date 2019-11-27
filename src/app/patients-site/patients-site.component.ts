@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {PatientsService} from '../services/patients.service';
+import {LoginService} from '../services/login.service';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-patients-site',
@@ -13,17 +15,36 @@ export class PatientsSiteComponent implements OnInit {
   filterValue: string;
 
   constructor(private service: PatientsService,
-              private router: Router) {
+              private router: Router,
+              private authenticationService: AuthenticationService) {
     this.filterValue = "";
+
+    console.log('dupa');
+    if (this.authenticationService.issUserPatient() && !this.authenticationService.isUserAdmin())
+    {
+      this.service.getActuallyLoggedInPatient().subscribe(
+        response => {
+          console.log('logowanie');
+          let patientId = response['patientId'];
+          this.openPatient(patientId);
+        }, error1 => {
+          console.log('logowanie failed');
+          console.log(error1);
+        }
+      );
+      this.router.navigate(['patients']);
+    }
   }
 
   ngOnInit() {
-    this.service.getAllPatients()
-      .subscribe(response => {
-        console.log(response);
-        this.patients = response;
-        this.filtredPatients = this.patients;
-      });
+    if (this.authenticationService.isUserAdmin()) {
+      this.service.getAllPatients()
+        .subscribe(response => {
+          console.log(response);
+          this.patients = response;
+          this.filtredPatients = this.patients;
+        });
+    }
   }
 
   openPatient(patienId) {

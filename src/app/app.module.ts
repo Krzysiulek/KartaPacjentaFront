@@ -21,6 +21,7 @@ import { DiseasesHeaderComponent } from './diseases-header/diseases-header.compo
 import { AllDiseasesComponent } from './all-diseases/all-diseases.component';
 import { CreateDiseaseComponent } from './create-disease/create-disease.component';
 import { PatientDiseaseMoreInfoComponent } from './patient-disease-more-info/patient-disease-more-info.component';
+import { FullMedicalDocumentationComponent } from './full-medical-documentation/full-medical-documentation.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PatientDiseaseMoreInfoComponent } from './patient-disease-more-info/pat
     DiseasesHeaderComponent,
     AllDiseasesComponent,
     CreateDiseaseComponent,
-    PatientDiseaseMoreInfoComponent
+    PatientDiseaseMoreInfoComponent,
+    FullMedicalDocumentationComponent
   ],
   imports: [
     BrowserModule,

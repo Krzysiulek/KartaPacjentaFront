@@ -22,9 +22,28 @@ export class MedialHistoryService {
     return this.httpClient.get<Object[]>(serviceUrl + '/api/illnessCource/' + patientId, {headers});
   }
 
+  getPatientHistoryFull(patientId) {
+    const headers = this.getHeader();
+    return this.httpClient.get<Object[]>(serviceUrl + '/api/illnessCource/' + patientId + "/full", {headers});
+  }
+
+  getPatientHistoryAnonymous(patientId) {
+    const headers = this.getHeader();
+    return this.httpClient.get<Object[]>(serviceUrl + '/api/illnessCource/' + patientId + "/anonymous", {headers});
+  }
+
   getPatientDisease(patientId, courseOfIllnessId) {
     const headers = this.getHeader();
     return this.httpClient.get<Object[]>(serviceUrl + '/api/illnessCource/' + patientId + "/" + courseOfIllnessId, {headers});
   }
 
+  getPatientFullDocumentationJson(patientId) {
+    let extended = sessionStorage.getItem('extendedDocs') == 'true';
+
+    if (extended) {
+      return serviceUrl + '/api/illnessCource/' + patientId + "/full"
+    } else {
+      return serviceUrl + '/api/illnessCource/' + patientId + "/anonymous"
+    }
+  }
 }

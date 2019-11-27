@@ -11,6 +11,7 @@ import {PatientPersonalInfoComponent} from './patient-personal-info/patient-pers
 import {AllDiseasesComponent} from './all-diseases/all-diseases.component';
 import {CreateDiseaseComponent} from './create-disease/create-disease.component';
 import {PatientDiseaseMoreInfoComponent} from './patient-disease-more-info/patient-disease-more-info.component';
+import {FullMedicalDocumentationComponent} from './full-medical-documentation/full-medical-documentation.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'diseases', component: AllDiseasesComponent },
   { path: 'createDisease', component: CreateDiseaseComponent },
   { path: 'medicalHistoryMore', component: PatientDiseaseMoreInfoComponent },
+  { path: 'generateMedicalDoc', component: FullMedicalDocumentationComponent },
   { path: 'all-users', component: AllUsersComponent }
 
 ];

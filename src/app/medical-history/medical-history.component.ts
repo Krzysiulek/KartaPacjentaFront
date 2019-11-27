@@ -29,7 +29,19 @@ export class MedicalHistoryComponent implements OnInit {
   }
 
   generateDocumentation() {
-    // todo
+    let patientId = sessionStorage.getItem('patientId');
+    sessionStorage.setItem('patientId', patientId);
+    sessionStorage.setItem('extendedDocs', 'true');
+
+    this.router.navigate(["generateMedicalDoc"]);
+  }
+
+  generateDocumentationAnonymous() {
+    let patientId = sessionStorage.getItem('patientId');
+    sessionStorage.setItem('patientId', patientId);
+    sessionStorage.setItem('extendedDocs', 'false');
+
+    this.router.navigate(["generateMedicalDoc"]);
   }
 
   onChange($event){

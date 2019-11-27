@@ -26,4 +26,9 @@ export class PatientsService {
     const headers = this.getHeader();
     return this.httpClient.get<Object[]>(serviceUrl + '/api/patients/' + patientId, {headers});
   }
+
+  public getActuallyLoggedInPatient() {
+    const headers = this.getHeader();
+    return this.httpClient.get<Object>(serviceUrl + '/api/patients/loggedId', {headers});
+  }
 }
