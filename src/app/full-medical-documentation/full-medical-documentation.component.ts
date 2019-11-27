@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class FullMedicalDocumentationComponent implements OnInit {
   patientId: number;
   medicalHistoryTOS: Object[];
-  patientInfo: Object;
+  patientInfo: any;
 
   constructor(private service: MedialHistoryService,
               private router: Router) {

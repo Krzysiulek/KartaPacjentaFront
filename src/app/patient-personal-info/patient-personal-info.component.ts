@@ -7,7 +7,7 @@ import {PatientsService} from '../services/patients.service';
   styleUrls: ['./patient-personal-info.component.scss']
 })
 export class PatientPersonalInfoComponent implements OnInit {
-  patient: object;
+  patient: any;
   patientId: string;
 
   constructor(public service: PatientsService) {

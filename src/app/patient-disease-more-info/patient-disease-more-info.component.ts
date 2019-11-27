@@ -9,7 +9,7 @@ import {MedialHistoryService} from '../services/medial-history.service';
 export class PatientDiseaseMoreInfoComponent implements OnInit {
   patientId: number;
   courseOfIllnessId: number;
-  history: object;
+  history: any;
 
   constructor(public service: MedialHistoryService) {
     this.patientId = Number(sessionStorage.getItem('patientId'));
