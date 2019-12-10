@@ -39,7 +39,10 @@ export class AllUsersComponent implements OnInit {
   }
 
   grantAdminRole(user) {
-
+    this.clientService.grantAdminRole(user)
+      .subscribe(data => {
+        this.handleSuccessfulResponse();
+      })
   }
 
   grantDoctorRole(user) {
@@ -54,4 +57,7 @@ export class AllUsersComponent implements OnInit {
 
   }
 
+  private handleSuccessfulResponse() {
+    this.ngOnInit();
+  }
 }
