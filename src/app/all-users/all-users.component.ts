@@ -46,15 +46,24 @@ export class AllUsersComponent implements OnInit {
   }
 
   grantDoctorRole(user) {
-
+    this.clientService.grantDoctorRole(user)
+      .subscribe(data => {
+        this.handleSuccessfulResponse();
+      })
   }
 
   grantPatientRole(user) {
-
+    this.clientService.grantPatientRole(user)
+      .subscribe(data => {
+        this.handleSuccessfulResponse();
+      })
   }
 
   delete(user) {
-
+    this.clientService.delete(user)
+      .subscribe(data => {
+        this.handleSuccessfulResponse();
+      })
   }
 
   private handleSuccessfulResponse() {

@@ -39,15 +39,40 @@ export class UsersService {
   }
 
   public grantDoctorRole(user) {
+    if (this.contains(user['roles'], 'ROLE_DOCTOR')) {
+      var readerRoles = user['roles'];
 
+      user['roles'] = [];
+
+      readerRoles = readerRoles.filter(item => item != 'ROLE_DOCTOR');
+      user['roles'] = readerRoles;
+    } else {
+      user['roles'].push('ROLE_DOCTOR');
+    }
+
+    const headers = this.getHeader();
+    return this.httpClient.put<Object>(serviceUrl + '/api/users', user, {headers});
   }
 
   public grantPatientRole(user) {
+    if (this.contains(user['roles'], 'ROLE_PATIENT')) {
+      var readerRoles = user['roles'];
 
+      user['roles'] = [];
+
+      readerRoles = readerRoles.filter(item => item != 'ROLE_PATIENT');
+      user['roles'] = readerRoles;
+    } else {
+      user['roles'].push('ROLE_PATIENT');
+    }
+
+    const headers = this.getHeader();
+    return this.httpClient.put<Object>(serviceUrl + '/api/users', user, {headers});
   }
 
   public delete(user) {
-
+    const headers = this.getHeader();
+    return this.httpClient.delete<Object[]>(serviceUrl + '/api/users/' + user.userId, {headers});
   }
 
   contains(arr, val) {
